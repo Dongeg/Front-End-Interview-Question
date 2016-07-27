@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript面试题目</title>
+	</head>
+	<body>
+		<!--用js写个原生的ajax过程-->
+		<!--<script>
+			window.onload=function(){
+			    document.getElementById("keyword").oninput=function(){
+			    	var keyword=this.value;
+			    	//1.创建XMLHttpRequest对象
+			    	var xhr=new XmlHttpRequest();
+			    	//2.open操作初始化请求信息
+			    	xhr.open('GET','keyword/hit?keyword='+encodeURIComponent(keyword),true);
+			    	//encodeURIComponent() 函数作用：可把字符串作为URI 组件进行编码
+			    	//3.监听事件处理响应结果
+			    	xhr.onreadystatechange=function(){
+			           if(xhr.readyState==4&&xhr.status==200){
+			                  handleResult(xhr.responseText);
+			           }
+			    	}
+			    	//4.发出请求
+			    	xhr.send();
+			    }				
+			}
+		</script>-->
+		<p>123</p>
+		<div>456<br /><span>741</span></div>
+		<h1></h1>
+		<script>
+			//请实现，鼠标点击页面中的任意标签，alert 该标签的名称（注意兼容性）
+			window.onload=function(){
+				var labels=document.getElementsByTagName("*");
+				for(var i=0;i<labels.length;i++){
+					labels[i].onclick=function(e){
+						if(e.stopPropagation){
+							e.stopPropagation();
+							alert(this.nodeName);							
+						}
+						else if(e.cancelBubble){
+							e.cancelBubble();
+							alert(this.nodeName)
+						}
+
+					}
+				}
+			}
+		</script>
+		<h3>请给出异步加载js方案，不少于两种。</h3>
+		<!--1.<script type="text/javascript" src="taojiaqu.js" async="async"></script>-->
+		
+		
+		<h3>请写出jquery绑定事件的方法，不少于两种</h3>
+		<p>.bind()     .on()
+		   建议使用on函数
+		</p>
+		
+		22.请优化某页面的加载速度。
+
+			1.JS、CSS、HTML做gzip压缩（不要对图片进行Gzip压缩）
+			
+			2.删除js、css、html文件的注释，回车符，以及无效字节
+			
+			3.javascript放置网页底部，避免阻塞下载
+			
+			4.CSS放到header中，避免白屏
+			
+			5.合并JS和CSS；压缩JS和CSS；
+			
+			6.优化缓存：对没有变化的css、js，图片等网页元素，直接利用客户端的浏览器缓存读取来有效减少http请求数。
+			
+			6.通过增加expires header（给文件加上关于过期时间的header报文）可以告诉浏览器，那些网页元素可以缓存和缓存多长时间。
+			
+			7.采用CSS sprites（CSS Sprites其实就是把网页中一些背景图片整合到一张图片文件中）技术来实现。
+			
+			8.把脚本和图片放在不同的服务器和域名，做成并行下载。
+			
+			9.利用H5的缓存技术
+	</body>
+</html>
