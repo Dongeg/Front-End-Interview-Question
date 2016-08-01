@@ -111,8 +111,15 @@
          color：<input type="color" /><br/>
          search：<input type="search" /><br/>
          img：<input type="image" src="/i/eg_submit.jpg" width="200" height="200" />
-         Select images: <input type="file" name="img" multiple="multiple" />      
+         Select images: <input type="file" name="img" multiple="multiple" />    
          
+         <h3>output标签</h3>
+		<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+		<input type="range" id="a" value="50"> + <input type="number" id="b" value="50">
+		=<output name="x" for="a b"></output>
+		</form>
+
+<p><b>注释：</b>Internet Explorer 不支持 <output> 标签。</p>         
          
          
          <h3>新增表单元素</h3>
@@ -242,6 +249,11 @@
      <h3>解决不同浏览器兼容性问题</h3>
      
               解决浏览器边距和间距问题，引入normalize.css
+     
+     
+     
+     
+     
      
 	</body>
 </html>
